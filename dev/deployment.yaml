@@ -18,7 +18,7 @@ spec:
         - name: facegram-registery
       containers:
         - name: statistics-server
-          image: cr.fcgm.dev/facegram/statistics-service:8697efe0
+          image: cr.fcgm.dev/facegram/statistics-service:3e4a1b0f
           ports:
             - containerPort: 30001
           env:
