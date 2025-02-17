@@ -15,4 +15,4 @@ spec:
           service:
             name: statistics-server-service
             port:
-              number: 30002
+              number: 30001

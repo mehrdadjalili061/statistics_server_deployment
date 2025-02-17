@@ -20,7 +20,7 @@ spec:
         - name: statistics-server
           image: cr.fcgm.dev/facegram/statistics-service:ae847d83
           ports:
-            - containerPort: 30002
+            - containerPort: 30001
           env:
             - name: NODE_ENV
               value: "dev"   
