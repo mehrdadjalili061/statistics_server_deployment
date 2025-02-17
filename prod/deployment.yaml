@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: statistics-server
+  labels:
+    app: statistics-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: statistics-server
+  template:
+    metadata:
+      labels:
+        app: statistics-server
+    spec:
+      imagePullSecrets:
+        - name: facegram-registery
+      containers:
+        - name: statistics-server
+          image: ""
+          ports:
+            - containerPort: 30002
+          env:
+            - name: NODE_ENV
+              value: "dev"   
+          envFrom:
+            - secretRef:
+                name: grpc-client-configs
+            - secretRef:
+                name: mongodb-credential
+            - secretRef:
+                name: sentry-credential       
